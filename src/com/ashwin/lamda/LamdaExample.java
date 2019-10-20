@@ -1,6 +1,6 @@
 package com.ashwin.lamda;
 
-import java.util.stream.Collectors;
+import java.io.IOException;
 
 /**
  * @author Ashwini Upadhyay
@@ -8,21 +8,21 @@ import java.util.stream.Collectors;
  * @version 1.0
  * @since 1.0
  */
-
-interface Drawable {
-
-	void draw();
-
+interface Operation {
+	int divide(int a, int b);
 }
 
 public class LamdaExample {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
-		Drawable d = () -> {
-			System.out.println(" Ashwini Upadhyay ".lines().collect(Collectors.toList()));
-		};
-		d.draw();
+		var str = "10.6";
+		System.out.println(Double.parseDouble(str));
+		Operation devide = (var x, var y) -> x / y;
+		Operation multiply = (int x, int y) -> x * y;
+		System.out.println(devide.divide(10, 5));
+		System.out.println(multiply.divide(106, 5));
 
+		
 	}
 }
